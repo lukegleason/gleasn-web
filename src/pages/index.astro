@@ -1,16 +1,181 @@
 ---
+import Layout from '~/layouts/LandingLayout.astro';
 
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Content from '~/components/widgets/Content.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Stats from '~/components/widgets/Stats.astro';
+
+const metadata = {
+  title: 'thumbnails',
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>gleasn.com</h1>
-	</body>
-</html>
+<style>
+  .image-collage {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr)); /* Make columns flexible */
+      gap: 20px; /* Increase the gap between images */
+      padding: 0; /* Add padding to the sides of the image collage */
+  }
+
+  .image-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      margin: 0; 
+  }
+
+  .image-wrapper:hover {
+      transform: scale(1.03);
+      transition: transform 0.4s ease;
+  }
+
+  .image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+  }
+
+  .image-wrapper:hover img {
+      transform: scale(1.05);
+  }
+</style>
+
+<Layout metadata={metadata}>
+  <Hero
+    id="features"
+    actions={[
+      {
+        variant: 'primary',
+        text: "CONTACT ME",
+        href: '#form',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      I make
+      <span class="text-accent dark:text-white highlight">Thumbnails</span>.
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
+      Level up your channel with thumbnails that demand clicks and captivate your audience from the get-go. Let's ditch the cookie-cutter approach and create visuals that speak volumes about your content. Elevate your YouTube game and leave a lasting impression with thumbnails that truly stand out.
+    </Fragment>
+
+    <Fragment slot="image">
+    <div class="image-collage">
+      <div class="image-wrapper">
+        <img src="https://i.ytimg.com/vi/TCkrTrqLHew/maxresdefault.jpg" alt="Image 1">
+      </div>
+      <div class="image-wrapper">
+        <img src="https://i.ytimg.com/vi/qEXPB09hVSc/maxresdefault.jpg" alt="Image 2">
+      </div>
+      <div class="image-wrapper">
+        <img src="https://i.ytimg.com/vi/rfY3xi_IasU/maxresdefault.jpg" alt="Image 3">
+      </div>
+      <div class="image-wrapper">
+        <img src="https://i.ytimg.com/vi/Fgd_Z-7cDiw/maxresdefault.jpg" alt="Image 1">
+      </div>
+      <div class="image-wrapper">
+        <img src="https://i.ytimg.com/vi/SPUtAxvXOa8/maxresdefault.jpg" alt="Image 2">
+      </div>
+      <div class="image-wrapper">
+        <img src="https://i.imgur.com/5iKpfCy.png" alt="Image 3">
+      </div>
+    </div>
+  </Fragment>
+  </Hero>
+
+  <Content
+  id="about"
+
+  image={{
+    src: 'https://i.imgur.com/zfYNQGQ.jpeg',
+    alt: 'Colorful Image',
+    loading: 'eager',
+  }}
+>
+  <Fragment slot="content">
+    <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+    <p class=>
+      Hi there, my name is Luke! I'm a 20-year-old YouTube Thumbnail Designer and Strategist with over <span class="font-bold">3 years of experience</span> in this dynamic industry. I've had the opportunity to work with some amazing creators on Youtube and I've developed the ability to create thumbnails that drive results.  
+    </p>
+    <br />
+    <p>
+      I love what I do! My passion lies in helping creators shine on YouTube by creating eye-catching, click-worthy thumbnails. Trust in my expertise, and together, we'll elevate your content and make your channel a standout success. Let's bring your vision to life, one thumbnail at a time.
+    </p>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+  <Stats
+  stats={[
+    { title: 'Thumbnails Made', amount: '400+' },
+    { title: 'Happy Clients', amount: '30+' },
+    { title: 'Views Generated', amount: '37M' },
+  ]}>
+  </Stats>
+
+  <Testimonials
+    title="Words from real clients"
+    testimonials={[
+      {
+        testimonial: `what the sigma. what the sigma. what the sigma. what the sigma. what the sigma.`,
+        name: 'SimplyN64',
+        job: 'Livestreamer & YouTuber',
+        image: {
+          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
+          alt: 'Emily Kennedy Image',
+        },
+      },
+      {
+        testimonial: `what the sigma. what the sigma. what the sigma. what the sigma. what the sigma.`,
+        name: 'Sarah Hansen',
+        job: 'Photographer',
+        image: {
+          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Sarah Hansen Image',
+        },
+      },
+      {
+        testimonial: `what the sigma. what the sigma. what the sigma. what the sigma. what the sigma.`,
+        name: 'Mark Wilkinson',
+        job: 'Small business owner',
+        image: {
+          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
+          alt: 'Mark Wilkinson Image',
+        },
+      },
+    ]}
+  />
+
+  <ContactUs
+  id="form"
+  title="Drop me a message today!"
+  subtitle="Ready to elevate your content with captivating thumbnails? Drop us a message below to discuss your vision and let's create something extraordinary together!"
+  inputs={[
+    {
+      type: 'text',
+      name: 'name',
+      label: 'Name',
+    },
+    {
+      type: 'email',
+      name: 'email',
+      label: 'Email',
+    },
+  ]}
+  textarea={{
+    label: 'Message',
+  }}
+  description="I will typically respond within 24 business hours."
+  >
+  </ContactUs>
+</Layout>
