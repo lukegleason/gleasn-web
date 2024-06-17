@@ -1,6 +1,6 @@
 site:
   name: gleasn.com
-  site: 'https://astrowind.vercel.app'
+  site: 'gleasn.com'
   base: '/'
   trailingSlash: false
 
