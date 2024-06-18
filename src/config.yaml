@@ -1,24 +1,24 @@
 site:
-  name: gleasn.com
-  site: 'gleasn.com'
+  name: gleasn
+  site: 'https://gleasn.com'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: OEX0_smYlsewCcc6z8tYaUMysDUgnuZXALznK75-SGw
 
 # Default SEO metadata
 metadata:
   title:
-    default: gleasn.com
+    default: gleasn
     template: '%s — gleasn.com'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "\U0001F680 Thumbnail Designer Landing Page"
   robots:
     index: true
     follow: true
   openGraph:
     site_name: gleasn.com
     images:
-      - url: '~/assets/images/default.png'
+        url: '/assets/images/default.png'
         width: 1200
         height: 628
     type: website
@@ -55,7 +55,7 @@ apps:
         index: true
 
     tag:
-      isEnabled: flase
+      isEnabled: false
       pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
       robots:
         index: false

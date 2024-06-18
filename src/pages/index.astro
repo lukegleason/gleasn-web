@@ -15,7 +15,7 @@ const metadata = {
 <style>
   .image-collage {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr)); /* Make columns flexible */
+      grid-template-columns: repeat(3, minmax(0, 1fr)); /* Default: 3 columns */
       gap: 20px; /* Increase the gap between images */
       padding: 0; /* Add padding to the sides of the image collage */
   }
@@ -41,6 +41,13 @@ const metadata = {
 
   .image-wrapper:hover img {
       transform: scale(1.05);
+  }
+
+  /* Media query for mobile devices */
+  @media (max-width: 600px) {
+      .image-collage {
+          grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns for mobile */
+      }
   }
 </style>
 
@@ -89,7 +96,7 @@ const metadata = {
   </Fragment>
   </Hero>
 
-  <Content
+  <Content 
   id="about"
 
   image={{
@@ -101,13 +108,15 @@ const metadata = {
   <Fragment slot="content">
     <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
     <p class=>
-      Hi there, my name is Luke! I'm a 20-year-old YouTube Thumbnail Designer and Strategist with over <span class="font-bold">3 years of experience</span> in this dynamic industry. I've had the opportunity to work with some amazing creators on Youtube and I've developed the ability to create thumbnails that drive results.  
+      Hey there! I'm Gleasn, and I've been crafting stunning thumbnails for YouTubers and Twitch streamers for over 3 years. During this time, I've had the pleasure of working with some of the most incredible content creators, helping them boost their engagement and grow their channels.
     </p>
     <br />
     <p>
-      I love what I do! My passion lies in helping creators shine on YouTube by creating eye-catching, click-worthy thumbnails. Trust in my expertise, and together, we'll elevate your content and make your channel a standout success. Let's bring your vision to life, one thumbnail at a time.
+      Creating thumbnails isn't just a job for me – it's a passion. I take immense pride in finding the most effective way to package your content into a visually appealing, click-worthy thumbnail. I understand the importance of that first impression and strive to make sure your video gets the attention it deserves.
     </p>
   </Fragment>
+
+
 
   <Fragment slot="bg">
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -118,7 +127,7 @@ const metadata = {
   stats={[
     { title: 'Thumbnails Made', amount: '400+' },
     { title: 'Happy Clients', amount: '30+' },
-    { title: 'Views Generated', amount: '37M' },
+    { title: 'Views Generated', amount: '37M+' },
   ]}>
   </Stats>
 
@@ -126,30 +135,30 @@ const metadata = {
     title="Words from real clients"
     testimonials={[
       {
-        testimonial: `work in progress!`,
-        name: 'SimplyN64',
-        job: 'Livestreamer & YouTuber',
+        testimonial: `Gleasn is absolutely crazy with the thumbnails and goes above and beyond. He takes direction perfectly and is quick with the turnaround. Highly recommend this guy`,
+        name: 'Jimmy Here',
+        job: 'Reaction YouTuber | 1.61M subscribers',
         image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
+          src: 'https://yt3.googleusercontent.com/ytc/AIdro_lBDbSREnbLJdEpxrfTWuqfCWhi4M80_TOalqpDL9gn2G5J=s900-c-k-c0x00ffffff-no-rj',
+          alt: 'Jimmy Image',
         },
       },
       {
-        testimonial: `work in progress!`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
+        testimonial: `Gleasn is consistently improving and very flexible and adaptive as YouTube continues to evolve. Very quick work with high quality. I highly recommend him as an editor`,
+        name: 'Simply',
+        job: 'Gaming YouTuber | 164K subscribers',
         image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
+          src: 'https://yt3.googleusercontent.com/ytc/AIdro_lcRexex2XImdf9TnVItarJU6xyScvBFKZDYW-nt1UQ4Q=s160-c-k-c0x00ffffff-no-rj',
+          alt: 'Simply Image',
         },
       },
       {
-        testimonial: `work in progress!`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
+        testimonial: `Gleasn is basically the goat. Easy to work with and super chill. Might be the greatest thumbnail guy on the planet to be honest...`,
+        name: 'Cake Hoarder',
+        job: 'Retro Reseller YouTuber | 442K subscribers',
         image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
+          src: 'https://yt3.googleusercontent.com/qOAldn58YQxsznhAEx0NA_Vfn_BYX5vozn0M1xalgKvQCww4LRnW2-7wrMCaLpFKJHn2JoNNqt8=s160-c-k-c0x00ffffff-no-rj',
+          alt: 'Cake Hoarder Image',
         },
       },
     ]}
@@ -158,7 +167,7 @@ const metadata = {
   <ContactUs
   id="form"
   title="Drop me a message today!"
-  subtitle="Ready to elevate your content with captivating thumbnails? Drop us a message below to discuss your vision and let's create something extraordinary together!"
+  subtitle="Let's work together to make your videos shine. Whether you're a seasoned creator or just starting out, I'm here to help you achieve your goals with top-notch thumbnails that deliver results."
   inputs={[
     {
       type: 'text',
